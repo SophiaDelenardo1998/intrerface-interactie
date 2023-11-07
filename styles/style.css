@@ -1,0 +1,169 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+
+/* naar een idee van Jen Simmons */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+body 
+ 
+
+button:not([disabled]) {
+  cursor:pointer;
+}
+
+img {
+  max-width:100%;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --h1balk:#e63946;
+  --titelbalkgame:#ffd100;
+  --backgroundsection1:#000000;
+  --colorh3:#fff; 
+  --colorp:#fff; 
+ 
+  /* ... */
+
+}
+
+
+/********************/
+/* ALGEMENE STYLING */
+/********************/
+body {
+  margin:0;
+}
+
+h1 {
+  height: 1em;
+  background-color: var(--h1balk);
+  margin: 0;
+}
+
+/* titel blolkje voor de games */
+section:first-of-type h2 {
+  background-color: var(--titelbalkgame);
+  margin: 0;
+  width: 10em;
+  text-align: center;
+  margin-left: 8em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Achtergrond section 1 */
+section:first-of-type {
+  background-color:var(--backgroundsection1);
+}
+/* grid voor de list items */
+section:first-of-type ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-gap: 1em;
+  padding-bottom: 2em;
+  
+}
+
+/* stijling van de ul */
+
+ul{
+  list-style-type: none;
+  padding:0;
+  margin-left: 12em;
+  margin-right: 12em;
+}
+li  button {
+  width: 30%;
+  padding:0;
+}
+li{
+  background-color: #e63946;
+  text-align: center;
+ 
+}
+/* button */
+li button{
+  background-color: transparent;
+  border: none;
+}
+
+/* Uitleg van Sanne gekregen hier over. Hier mee zorg je dat de
+plaatjes netjes blijven */
+li button img {
+  display:block;
+  width:100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+li button img:hover{
+  animation-name: jumb;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+
+@keyframes jumb{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+/* Section 2, hier komen informatie blokken */
+
+
+ 
+/*Stijling informatieblokken */
+
+section:nth-of-type(2){
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+section:nth-of-type(2) section:first-of-type {
+  background-color: var(--backgroundsection1);
+  width: 100%;
+  margin-left: 5em;
+  height: 15em;
+  
+  
+}
+
+section:nth-of-type(2) section:nth-of-type(2) {
+  background-color: var(--backgroundsection1);
+  width: 100%;
+  margin-right: 5em;
+  height: 15em;
+}
+
+/* Het stijlen van h3 */
+h3{
+  background: transparent;
+  color:var(--colorh3);
+  margin-left: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+  color:var(--colorp);
+  margin-left: 1em;
+  margin-right: 5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
