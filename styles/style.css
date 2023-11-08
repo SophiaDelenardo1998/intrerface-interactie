@@ -32,7 +32,12 @@ img {
   --backgroundsection1:#000000;
   --colorh3:#fff; 
   --colorp:#fff; 
+  --colorbuttonlink:#386641; 
+  --colorbuttonhover:#a3b18a; 
+  
  
+  
+  
   /* ... */
 
 }
@@ -107,12 +112,12 @@ li button img {
 }
 
 li button img:hover{
-  animation-name: jumb;
+  animation-name: scale;
   animation-duration: 2s;
-  animation-delay: 1s;
+  animation-delay: .5s;
 }
 
-@keyframes jumb{
+@keyframes scale{
   0%{
     transform: scale(1);
   }
@@ -130,7 +135,7 @@ li button img:hover{
  
 /*Stijling informatieblokken */
 
-section:nth-of-type(2){
+main > section:nth-of-type(2){
   display: flex;
   flex-direction: row;
   gap: 2em;
@@ -140,7 +145,7 @@ section:nth-of-type(2) section:first-of-type {
   background-color: var(--backgroundsection1);
   width: 100%;
   margin-left: 5em;
-  height: 15em;
+  height: 20em;
   
   
 }
@@ -149,7 +154,7 @@ section:nth-of-type(2) section:nth-of-type(2) {
   background-color: var(--backgroundsection1);
   width: 100%;
   margin-right: 5em;
-  height: 15em;
+  height: 20em;
 }
 
 /* Het stijlen van h3 */
@@ -157,6 +162,7 @@ h3{
   background: transparent;
   color:var(--colorh3);
   margin-left: 1em;
+  margin: 1em;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -167,3 +173,61 @@ p{
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* Het stijlen van button easter egg */
+
+main> button{
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:var( --colorbuttonlink);
+  border-radius: 1em;
+  height: 2em;
+  width: 8em;
+  margin-top: 1em;
+  border-color: transparent;
+  color: var(--colorp);
+  
+}
+
+/* Stages button */
+
+main>button:hover{
+  background-color: var(--colorbuttonhover);
+}
+
+main>button:after{
+  background-color: var(--colorbuttonafter);
+
+}
+
+/* Het stijlen van Link */
+
+main > img {
+  /* left: 100% ; */
+  position: fixed;
+  top: calc(50% - 15em);
+  transform: translateX(-100%);
+  height: 25em;
+  /* position: absolute; */
+  
+  /* animation-play-state: paused;  */
+ 
+
+}
+
+@keyframes rennenlink{
+  0%{ 
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(250%);
+
+  }
+}
+
+main > img.ikRen{
+  animation-name: rennenlink;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: initial
+}
